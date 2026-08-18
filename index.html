@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gemelo Digital Industrial 3D</title>
+  </head>
+  <body class="bg-slate-900 text-slate-200 overflow-hidden w-screen h-screen fixed inset-0">
+
+    <!-- Contenedor principal: canvas 3D + overlay UI -->
+    <div id="app">
+
+      <!-- ═══ Overlay UI (absolute, pointer-events-none por defecto) ═══ -->
+      <div id="dashboard-overlay" class="absolute inset-0 z-10 pointer-events-none">
+
+        <!-- ── Barra Superior ─────────────────────────────────────── -->
+        <div id="top-bar"
+          class="pointer-events-auto absolute top-0 inset-x-0
+            bg-slate-950/80 backdrop-blur-md border-b border-slate-700/50
+            px-5 py-2.5 flex items-center gap-6 text-sm">
+
+          <span class="font-semibold text-slate-300 tracking-wide text-xs uppercase">
+            🏭 Gemelo Digital
+          </span>
+
+          <div class="flex items-center gap-5 ml-auto text-xs text-slate-400">
+            <div class="flex items-center gap-1.5">
+              <span class="text-slate-500">Slots</span>
+              <span id="total-slots" class="font-mono font-semibold text-white">0</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <span class="text-slate-500">Alertas</span>
+              <span id="alert-count" class="font-mono font-semibold text-red-400">0</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <span class="text-slate-500">Actualización</span>
+              <span id="last-update" class="font-mono text-slate-300">--</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <span class="text-slate-500">Tick</span>
+              <span id="tick-count" class="font-mono text-slate-300">0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Panel de Detalles (lateral derecho) ────────────────── -->
+        <div id="detail-panel"
+          class="pointer-events-auto hidden absolute top-14 right-3 w-72
+            bg-slate-950/90 backdrop-blur-lg border border-slate-700/50
+            rounded-xl shadow-2xl shadow-black/50
+            p-5 text-sm overflow-y-auto max-h-[calc(100vh-5rem)]">
+
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-xs uppercase tracking-widest text-slate-500 font-semibold">
+              Detalle del Slot
+            </h3>
+            <button id="close-detail"
+              class="text-slate-500 hover:text-white transition-colors text-lg leading-none"
+              title="Cerrar">&times;</button>
+          </div>
+
+          <div id="detail-content" class="text-slate-300">
+            <p class="text-slate-500 text-sm text-center py-8">
+              Haz clic en un bloque del almacén para ver sus detalles.
+            </p>
+          </div>
+
+          <!-- ── Mini-lista de alertas recientes ──────────────────── -->
+          <div class="mt-5 border-t border-slate-800 pt-3">
+            <h4 class="text-xs uppercase tracking-widest text-slate-600 font-semibold mb-2">
+              Últimas Alertas
+            </h4>
+            <div id="alert-list" class="space-y-0.5">
+              <p class="text-slate-500 text-xs text-center py-4">Sin alertas</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Contenedor de Toasts (inferior izquierdo) ──────────── -->
+        <div id="toast-container"
+          class="pointer-events-none absolute bottom-4 left-4
+            flex flex-col-reverse gap-2 z-20">
+        </div>
+
+      </div><!-- /dashboard-overlay -->
+    </div><!-- /app -->
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

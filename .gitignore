@@ -1,0 +1,78 @@
+# ════════════════════════════════════════════════════════════════════
+# .gitignore — Node.js · Vite · TypeScript
+# Escudo de seguridad: jamás entran dependencias, builds ni secretos.
+# ════════════════════════════════════════════════════════════════════
+
+# ── Dependencias ────────────────────────────────────────────────────
+node_modules/
+.pnp
+.pnp.js
+.yarn/
+
+# ── Builds / Output ─────────────────────────────────────────────────
+dist/
+dist-ssr/
+build/
+out/
+coverage/
+.vite/
+*.tsbuildinfo
+.eslintcache
+.stylelintcache
+.turbo/
+
+# ── Variables de entorno (¡NUNCA subir secretos a Git!) ─────────────
+.env
+.env.*
+!.env.example
+
+# ── Logs ────────────────────────────────────────────────────────────
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ── Sistema Operativo ───────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# ── Editores / IDEs ─────────────────────────────────────────────────
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ── Runtime / Procesos ──────────────────────────────────────────────
+pids/
+*.pid
+*.seed
+*.pid.lock
+lib-cov/
+node_repl_history
+
+# ── Claude Code (configuración local personal) ──────────────────────
+.claude/settings.local.json
+.claude/settings.local.diff
+
+# ── Temporales / Misceláneos ────────────────────────────────────────
+*.tmp
+*.temp
+.tmp/
+.temp/
+*.bak
+*.zip
+*.rar
+*.7z
