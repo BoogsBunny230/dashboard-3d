@@ -18,9 +18,7 @@
   <img src="https://img.shields.io/badge/License-MIT-10b981?style=for-the-badge" alt="MIT License" />
 </p>
 
-<p align="center">
-  <img src="./src/assets/hero.png" alt="Industrial 3D Digital Twin Dashboard" width="800" />
-</p>
+![Industrial 3D Digital Twin Dashboard](./src/assets/hero.png)
 
 ---
 
@@ -201,6 +199,8 @@ Distributed under the **MIT License**. See [LICENSE](LICENSE) for details.
 ---
 
 ## 🇪🇸 Versión en Español
+
+![Tablero del Gemelo Digital Industrial 3D](./src/assets/hero.png)
 
 ### 🏭 Gemelo Digital Industrial 3D — Tablero en tiempo real
 
